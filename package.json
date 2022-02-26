@@ -9,6 +9,7 @@
   "scripts": {
     "start": "node app.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -19,15 +20,8 @@
     "mongoose": "^6.2.3",
     "nodemon": "^2.0.15",
     "validator": "^13.7.0",
-    "vercel": "^24.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ashu0126/lernr_lms.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/Ashu0126/lernr_lms/issues"
-  },
-  "homepage": "https://github.com/Ashu0126/lernr_lms#readme"
+    "@vercel/node": "^1.12.1",
+    "ejs": "^3.1.6",
+    "request": "^2.88.2"
+  }
 }
