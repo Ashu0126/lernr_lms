@@ -23,8 +23,7 @@ const dbURI =
 mongoose
   .connect(dbURI)
   .then((result) => {
-    app.listen(port);
-    console.log("Database Connected");
+    app.listen(port, () => console.log(`Server is up on port ${port}.`));
   })
   .catch((err) => console.log(err));
 
