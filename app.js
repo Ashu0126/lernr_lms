@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
 const cookieParser = require("cookie-parser");
 const { requireAuth, checkUser } = require("./middleware/authMiddleware");
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -22,7 +23,7 @@ const dbURI =
 mongoose
   .connect(dbURI)
   .then((result) => {
-    app.listen(3000);
+    app.listen(port);
     console.log("Database Connected");
   })
   .catch((err) => console.log(err));
