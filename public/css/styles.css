@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 15px;
+}
+body::-webkit-scrollbar-track {
+  background: lightgray;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primaryColor);
+  border: 2px solid lightgray;
+  border-radius: 10px;
+}
+
+:root {
+  --primaryColor: #3e6e9d;
+  --secondaryColor: #abc6dc;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 0.5rem 2rem;
+}
+
+nav img {
+  width: 4rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li {
+  list-style: none;
+  margin-left: 1rem;
+  font-size: 1.1rem;
+}
+
+nav .menu,
+nav .cross {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+/* Course Page */
+#course {
+  display: grid;
+  align-items: flex-start;
+  border-bottom: 2px white solid;
+  padding: 0%;
+  grid-template-columns: 25% auto;
+}
+
+#course .aside h5 {
+  border-bottom: 2px var(--secondaryColor) solid;
+  font-size: 1.3rem;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#course .aside h5 img {
+  width: 1.5rem;
+  height: 1.5rem;
+  filter: invert(1);
+}
+
+.more {
+  display: block;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.more:hover {
+  background-color: #ffc787;
+  border-radius: 1rem;
+  transition: none;
+}
+
+.more.active {
+  display: none;
+}
+
+.less {
+  display: none;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.less:hover {
+  background-color: #ffc787;
+  border-radius: 1rem;
+  transition: none;
+}
+
+.less.active {
+  display: block;
+}
+
+.down {
+  display: none;
+}
+
+#course .aside a {
+  color: white;
+}
+
+#course .aside li {
+  border-bottom: 2px var(--secondaryColor) solid;
+  font-size: 1rem;
+  padding: 1rem 5%;
+}
+
+#course .aside {
+  background-color: var(--primaryColor);
+  transition: 0.3s;
+  color: white;
+  height: 100%;
+}
+
+#course .aside.active {
+  transform: translateX(-80%);
+  transition: 0.3s;
+}
+
+#course .content {
+  display: grid;
+  margin: 5rem;
+  transition: 0.3s;
+}
+
+#course .content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#course .content h6 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+#course .content p {
+  width: fit-content;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+#course .content.active {
+  transform: translateX(-10%);
+  transition: 0.3s;
+}
+
+#course .iframe {
+  display: grid;
+  height: max-content;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+#course iframe {
+  width: 700px;
+  height: 430px;
+}
+
+#course .move {
+  margin: 3rem 3rem 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Button */
+.btn {
+  background-color: var(--primaryColor);
+  color: white;
+  padding: 0.7rem 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0055aa;
+}
+
+main {
+  padding: 3rem 3rem 4rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main div p {
+  margin-bottom: 1.5rem;
+  width: 500px;
+}
+
+main .lms-img img {
+  width: 600px;
+}
+
+#whyUs {
+  background-color: var(--primaryColor);
+  padding: 7rem 3rem;
+  color: white;
+  border-bottom: solid aliceblue 2px;
+}
+
+#whyUs h2 {
+  width: 30%;
+  margin-bottom: 1rem;
+}
+
+#whyUs p {
+  width: 80%;
+}
+
+#courses {
+  background-color: var(--secondaryColor);
+  padding: 1rem;
+  border-bottom: solid aliceblue 2px;
+}
+
+#courses h2 {
+  color: white;
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+#courses h4 {
+  color: var(--primaryColor);
+}
+
+#courses div {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+#courses div a {
+  background-color: white;
+  margin: 0.7rem 0.7rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  width: max-content;
+}
+
+#courses div a img {
+  width: 17rem;
+  height: 10rem;
+  border-radius: 1rem;
+}
+
+#courses div a img:hover {
+  width: 18rem;
+  height: 11rem;
+  transition: 0.3s;
+}
+
+#button-section p {
+  display: none;
+}
+
+/* Login/ SignUp Page */
+form {
+  display: flex;
+}
+
+form #img {
+  background-color: aliceblue;
+  width: 50%;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+form #img p {
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+}
+
+img {
+  width: 70%;
+}
+
+#form {
+  text-align: left;
+  display: grid;
+  padding: 6rem 3rem;
+  width: 50%;
+  background-color: none;
+}
+
+#form input {
+  width: 70%;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  border: solid 2px var(--secondaryColor);
+  outline: var(--secondaryColor);
+  padding: 0rem 1rem;
+}
+
+#form h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primaryColor);
+}
+
+#form input {
+  margin-bottom: 1rem;
+}
+
+#form button {
+  height: 2.5rem;
+  border-radius: 2rem;
+  background-color: var(--primaryColor);
+  padding: 0rem 1rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: none;
+  width: max-content;
+  color: white;
+  cursor: pointer;
+}
+
+/* Error Page */
+.error {
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error p {
+  margin-bottom: 2rem;
+}
+
+.error img {
+  width: 400px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: var(--primaryColor);
+  color: white;
+  font-size: 1rem;
+  padding: 2rem;
+}
+
+@media (max-width: 1200px) {
+  main div p {
+    margin-bottom: 1.5rem;
+    width: fit-content;
+  }
+
+  main .lms-img img {
+    width: 400px;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  #course .content {
+    margin: 2rem;
+  }
+
+  #course .content h2 {
+    font-size: 2rem;
+  }
+
+  #course .content p {
+    font-size: 1rem;
+  }
+
+  #course .iframe iframe {
+    width: 90%;
+  }
+
+  #course .aside h5 {
+    font-size: 1.35rem;
+  }
+
+  #course .aside li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 850px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}

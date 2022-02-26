@@ -1,0 +1,33 @@
+{
+  "name": "lernr-lms",
+  "version": "1.0.0",
+  "description": "Welcome to Lernr Lms. This is a learning management system. Have different types of course in it. You can log in, logout or even signup an account. The lms is built with node js, mongodb and node js",
+  "main": "app.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.3",
+    "nodemon": "^2.0.15",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashu0126/lernr_lms.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Ashu0126/lernr_lms/issues"
+  },
+  "homepage": "https://github.com/Ashu0126/lernr_lms#readme"
+}

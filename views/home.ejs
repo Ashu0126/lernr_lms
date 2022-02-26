@@ -1,0 +1,71 @@
+<%- include("./partials/head")%>
+<nav>
+  <div>
+    <a href="/"><img src="/img/main-logo.png" alt="" /></a>
+    <li class="menu"><img src="/img/menu.svg" alt="" /></li>
+    <li class="cross"><img src="/img/cross.svg" alt="" /></li>
+  </div>
+  <ul>
+    <% if(user){%>
+    <li>Welcome, <%= user.email %></li>
+    <a href="/logout"><li>Logout</li></a>
+    <%}else{%>
+    <a href="/login"><li>Login / SignUp</li></a>
+    <%}%>
+  </ul>
+</nav>
+<main>
+  <div class="lms-main">
+    <h1>Lernr</h1>
+    <h2>Learn Anything</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, laborum
+      impedit ullam.
+    </p>
+    <a href="#whyUs" class="btn">Explore ></a>
+  </div>
+  <div class="lms-img">
+    <img src="img/lms-first-pic.png" alt="" />
+  </div>
+</main>
+<div id="whyUs">
+  <h2>Why Us?</h2>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quo natus
+    accusamus dolore saepe doloribus. Tenetur voluptas eos mollitia repudiandae
+    sed fugit, perferendis harum dolorum quia, veniam ab. Culpa, libero?
+  </p>
+</div>
+<div id="courses">
+  <h2>Courses</h2>
+  <div>
+    <a href="/task1">
+      <h4>Software Development</h4>
+      <img src="/img/software-development.webp" alt="" />
+    </a>
+    <a href="/task1">
+      <h4>Software Development</h4>
+      <img src="/img/software-development.webp" alt="" />
+    </a>
+    <a href="/task1">
+      <h4>Software Development</h4>
+      <img src="/img/software-development.webp" alt="" />
+    </a>
+  </div>
+</div>
+<%- include("./partials/footer")%>
+<script>
+  const menu = document.querySelector(".menu");
+  const cross = document.querySelector(".cross");
+  const profile = document.querySelector("nav ul");
+  menu.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    cross.classList.toggle("active");
+    profile.classList.toggle("active");
+  });
+  cross.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    cross.classList.toggle("active");
+    profile.classList.toggle("active");
+  });
+</script>

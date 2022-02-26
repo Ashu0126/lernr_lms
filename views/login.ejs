@@ -1,0 +1,56 @@
+<%- include("./partials/head")%>
+<nav>
+  <a href="/"><img src="/img/main-logo.png" alt="" /></a>
+</nav>
+<form>
+  <div id="form">
+    <h2>Log In</h2>
+    <label for="email">Email Address</label>
+    <input class="email" name="email" type="text" />
+    <div class="email-error"></div>
+    <label for="password">Password</label>
+    <input class="password" name="password" type="password" />
+    <div class="password-error"></div>
+    <button>Log In</button>
+  </div>
+  <div id="img">
+    <img src="/img/login.svg" alt="" />
+    <p>Don't have an account ? <a href="/signup"> Sign Up</a></p>
+  </div>
+</form>
+<%- include("./partials/footer")%>
+<script>
+  const form = document.querySelector("form");
+  const eError = document.querySelector(".email-error");
+  const pError = document.querySelector(".password-error");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    //reset the errors
+    eError.textContent = "";
+    pError.textContent = "";
+
+    //get the values
+    const email = form.email.value;
+    const password = form.password.value;
+    try {
+      const res = await fetch("/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res.json();
+      console.log(data);
+      if (data.errors) {
+        eError.textContent = data.errors.email;
+        pError.textContent = data.errors.password;
+      }
+      if (data.user) {
+        location.assign("/");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  });
+</script>

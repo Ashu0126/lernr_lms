@@ -1,0 +1,35 @@
+<%- include("./partials/head")%>
+<nav>
+  <a href="/"><img src="/img/main-logo.png" alt="" /></a>
+  <ul>
+    <% if(user){%>
+    <li>Welcome, <%= user.email %></li>
+    <a href="/logout"><li>Logout</li></a>
+    <%}else{%>
+    <a href="/login"><li>Login / SignUp</li></a>
+    <%}%>
+    <li class="menu"><img src="/img/menu.svg" alt="" /></li>
+    <li class="cross"><img src="/img/cross.svg" alt="" /></li>
+  </ul>
+</nav>
+<div class="error">
+  <div>
+    <h1>Oooops !</h1>
+    <p>We can't seem to find a page you are looking for</p>
+    <a class="btn" href="/home">Return Home</a>
+  </div>
+  <div class="error-img"><img src="img/error_img.png" alt="" /></div>
+</div>
+<%- include("./partials/footer")%>
+<script>
+  const menu = document.querySelector(".menu");
+  const cross = document.querySelector(".cross");
+  menu.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    cross.classList.toggle("active");
+  });
+  cross.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    cross.classList.toggle("active");
+  });
+</script>

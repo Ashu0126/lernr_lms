@@ -1,0 +1,98 @@
+<%- include("./partials/head")%>
+<nav>
+  <div>
+    <a href="/"><img src="/img/main-logo.png" alt="" /></a>
+    <li class="menu"><img src="/img/menu.svg" alt="" /></li>
+    <li class="cross"><img src="/img/cross.svg" alt="" /></li>
+  </div>
+  <ul>
+    <% if(user){%>
+    <li>Welcome, <%= user.email %></li>
+    <a href="/logout"><li>Logout</li></a>
+    <%}else{%>
+    <a href="/login"><li>Login / SignUp</li></a>
+    <%}%>
+  </ul>
+</nav>
+<main id="course">
+  <div class="aside">
+    <h5>
+      Software Development <img class="more" src="/img/more.png" alt="" />
+      <img class="less" src="/img/less.png" alt="" />
+      <img class="down" src="/img/down.svg" alt="" />
+    </h5>
+    <ul>
+      <a href="/task1"> <li>Task 1: HTML Refresher</li></a>
+      <a href="/task2"> <li>Task 2: CSS Refresher</li></a>
+      <a href="/task3"> <li>Task 3: JavaScript Refresher</li></a>
+      <a href="/task4"> <li>Task 4: NodeJs Refresher</li></a>
+      <a href="/task5"> <li>Task 5: MongoDb And Mongoose Refresher</li></a>
+    </ul>
+  </div>
+  <div class="content">
+    <h2>Task 5: MongoDb And Mongoose Refresher</h2>
+    <p>
+      MongoDB is an open-source document database and leading NoSQL database.
+      MongoDB is written in C++. This tutorial will give you great understanding
+      on MongoDB concepts needed to create and deploy a highly scalable and
+      performance-oriented database.
+      <br /><br />
+      Your Tasks:
+      <br /><br />
+      1. Watch the Video Below
+    </p>
+    <div class="iframe">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/4yqu8YF29cU"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="move">
+      <a class="btn" href="/task4">< Previous</a>
+    </div>
+  </div>
+</main>
+<script>
+  const button = document.querySelector(".more");
+  const button1 = document.querySelector(".less");
+  const aside = document.querySelector(".aside");
+  const content = document.querySelector(".content");
+  button.addEventListener("click", () => {
+    aside.classList.toggle("active");
+    content.classList.toggle("active");
+    button.classList.toggle("active");
+    button1.classList.toggle("active");
+  });
+  button1.addEventListener("click", () => {
+    aside.classList.toggle("active");
+    content.classList.toggle("active");
+    button.classList.toggle("active");
+    button1.classList.toggle("active");
+  });
+
+  const ul = document.querySelector("#course .aside ul");
+  const button2 = document.querySelector(".down");
+  button2.addEventListener("click", () => {
+    ul.classList.toggle("active");
+    button2.classList.toggle("active");
+  });
+  const menu = document.querySelector(".menu");
+  const cross = document.querySelector(".cross");
+  const profile = document.querySelector("nav ul");
+  menu.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    cross.classList.toggle("active");
+    profile.classList.toggle("active");
+  });
+  cross.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    cross.classList.toggle("active");
+    profile.classList.toggle("active");
+  });
+</script>
+<%- include("./partials/footer")%>
